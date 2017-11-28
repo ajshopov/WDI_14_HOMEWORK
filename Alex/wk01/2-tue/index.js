@@ -6,12 +6,22 @@ console.log('Your name is ' + name);
 
 //Part 2
 console.log('Part 2');
-var order = prompt('On the menu tonight: Steak, fruit salad, tofurkey, pork chops. What would you like?');
+var request = prompt('On the menu tonight: Steak, fruit salad, tofurkey, pork chops. What would you like?');
 
-if (order === 'fruit salad' || order === 'tofurkey'){
-  console.log('This cuisine is Vegan friendly');
+request = request.toUpperCase();
+
+var menuOptions = ['STEAK', 'FRUIT SALAD', 'TOFURKEY', 'PORK CHOPS'];
+var validOption = menuOptions.includes(request);
+
+if (validOption){
+
+    if (request === 'FRUIT SALAD' || request === 'TOFURKEY'){
+      console.log('This cuisine is Vegan friendly');
+    } else {
+      console.log('Vegans beware!');
+    }
 } else {
-  console.log('Vegans beware!');
+  console.log('not a valid option');
 }
 
 //Part 3
