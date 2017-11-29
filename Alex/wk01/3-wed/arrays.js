@@ -5,10 +5,7 @@ console.log(days_of_the_week);
 
 //2.
 
-var mover = days_of_the_week.pop();
-console.log(days_of_the_week);
-
-days_of_the_week.unshift(mover);
+days_of_the_week.unshift(days_of_the_week.pop());
 console.log(days_of_the_week);
 
 //3.
