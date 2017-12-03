@@ -1,4 +1,11 @@
 
+var changeDirection = function(dep, arr, track){
+      track = track.slice(0).reverse();
+      dep = track.length - dep - 1;
+      arr = track.length - arr -1;
+
+      return [dep, arr, track];
+}
 
 var alamein = ['Flinders', 'Richmond', 'East_Rich', 'Burnley', 'Hawthorn', 'Glenferrie'];
 var glenWaverly = ['Flagstaff', 'Central', 'Parliament', 'Richmond', 'Kooyong', 'Tooronga'];
@@ -8,8 +15,7 @@ var origin = prompt('FROM:');
 var dest = prompt('TO:');
 
 
-//find origin in array, return index eg 3
-//check which line it is in
+//check which line for origin
 var beg = alamein.indexOf(origin);
 var line1 = alamein.slice(0);
   if(beg === -1){
@@ -20,10 +26,10 @@ var line1 = alamein.slice(0);
     beg = sandringham.indexOf(origin);
     line1 = sandringham.slice(0);
   }
-console.log('beginning: ' + beg + ' trainline ' + line1);
 
+//console.log('beginning: ' + beg + ' trainline ' + line1);
 
-//find dest in array, return index eg 1
+//find destination line
 var end = alamein.indexOf(dest);
 var line2 = alamein.slice(0);
   if(end === -1){
@@ -34,9 +40,7 @@ var line2 = alamein.slice(0);
     end = sandringham.indexOf(dest);
     line2 = sandringham.slice(0);
   }
-console.log('ending: ' + end + ' trainline ' + line2);
-console.log(line1);
-console.log(line2);
+//console.log('ending: ' + end + ' trainline ' + line2);
 
 var checker1 = line1.join();
 var checker2 = line2.join();
@@ -45,65 +49,48 @@ console.log(checker1);
 console.log(checker2);
 //check that lines are the same, if not, change var transfer to Richmond
 if(checker1 == checker2){
+    
+      if(beg > end){
+          var newDirection = changeDirection(beg, end, line1);
+          beg = newDirection[0];
+          end = newDirection[1];
+          line1 = newDirection[2];
+      }
 
-    //if origin > dest, reverse eg so 1, 3
-    if(beg > end){
-      line1 = line1.slice(0).reverse();
-          //reversed directions, reassign index
-          var beg = line1.indexOf(origin);
-          var end = line1.indexOf(dest);
-          console.log(beg);
-          console.log(end);
-    }
-    //slice array to trip
-    var trip = line1.slice(beg, end+1);
-    console.log(trip);
-
+      //slice array to trip 
+      var trip = line1.slice(beg, end+1);
+      console.log(trip);
 
 } else {
-    //set transfer for Richmond station
-    var transfer1 = line1.indexOf('Richmond');
-    //console.log(transfer1);
-    var transfer2 = line2.indexOf('Richmond');
+      //set transfer for Richmond station
+      var transfer1 = line1.indexOf('Richmond');
+      var transfer2 = line2.indexOf('Richmond');
 
-        if(beg > transfer1){
-          line1 = line1.slice(0).reverse();
-          //reversed directions, reassign index
-          var beg = line1.indexOf(origin);
-          var transfer1 = line1.indexOf('Richmond');
-          console.log(beg);
-          console.log(transfer1)
-        }
+      if(beg > transfer1){
+          var newDirection = changeDirection(beg, transfer1, line1);
+          beg = newDirection[0];
+          transfer1 = newDirection[1];
+          line1 = newDirection[2];        
+      }
 
-        if (transfer2 > end){
-          line2 = line2.slice(0).reverse();
-          //reversed directions, reassign index
-          var end = line2.indexOf(dest);
-          var transfer2 = line2.indexOf('Richmond');
-          console.log(end);
-          console.log(transfer2)
-        }
-        //slice both arrays for 2 trips
-        var tripA = line1.slice(beg, transfer1);
-        var tripB = line2.slice(transfer2, end+1);
-        var trip = tripA.concat(tripB);
-        console.log(trip);
-  }
+      if(transfer2 > end){
+          var newDirection = changeDirection(transfer2, end, line2);
+          transfer2 = newDirection[0];
+          end = newDirection[1];
+          line2 = newDirection[2];
+      }
 
-
-//slice array to new trip
-
-// var trip = alamein.slice(beg, end+1);
-// console.log(trip);
-
-// length of trip -- total number of stops
+      //slice both arrays for 2 trips and join
+      var tripA = line1.slice(beg, transfer1);
+      var tripB = line2.slice(transfer2, end+1);
+      var trip = tripA.concat(tripB);
+      console.log(trip);
+}
 
 //output results
-console.log('TRIP PLANNER')
+console.log('~~~TRIP PLANNER~~~')
 console.log('origin: '+ origin);
 console.log ('destination: ' + dest);
 console.log(trip.join(" --> "));
 console.log((trip.length - 1) + ' stops total');
-
-
 
