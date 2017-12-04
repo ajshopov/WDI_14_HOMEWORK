@@ -1,17 +1,79 @@
-.logo{
-  background-image: "images/background.jpg";
+body{
+  background-color: lightgrey;
+  text-align: center;
+}
+
+header {
+  background-image: url("../images/background.jpg");
   background-repeat: repeat-x;
+
+}
+
+.logo{
+  display: block;
+  margin: auto;
+  margin-bottom: 50px;
 }
 
 .left{
-  float: left;
+  display: inline-block;
+  background-color: white;
+  width: 45%;
+  padding: 10px;
+  margin: 5px;
+  text-align: left;
+/*  vertical-align: top;*/
 }
 
 .right{
-  float: right;
+  display: inline-block;
+  background-color: white;
+  width: 18%;
+  padding: 10px;
+  margin: 5px;
+  text-align: left;
+  vertical-align: top;
+}
+
+p{
+  font-size: 14px;
+}
+
+a{
+  color: red;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav{
+  padding-bottom: 10px;
+}
+
+ul, h4{
+  padding: 0px;
+  margin: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+h4{
+  text-transform: uppercase;
+}
+
+.adds{
+  margin: 5px 5px 25px 5px;
 }
 
 footer{
-
+  clear: both;
+  display: block;
+  padding: 30px;
   margin: auto;
+}
+
+.author{
+  border-top: 1px dotted black;
+  border-bottom: 1px solid black;
+  padding: 5px;
+  margin-bottom: 30px;
 }
