@@ -1,0 +1,26 @@
+h1, h3 {
+  color: grey;
+}
+
+p {
+  font-size: 12px;
+  width: 960px;
+  color: grey;
+}
+
+a{
+  font-size: 12px;
+  text-decoration: none;
+}
+
+a:visited{
+  color: blue;
+}
+
+a + p {
+  margin-top: 5px;
+}
+
+article > img {
+  border: 5px solid grey;
+}

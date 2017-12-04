@@ -1,0 +1,17 @@
+.logo{
+  background-image: "images/background.jpg";
+  background-repeat: repeat-x;
+}
+
+.left{
+  float: left;
+}
+
+.right{
+  float: right;
+}
+
+footer{
+
+  margin: auto;
+}
