@@ -1,0 +1,44 @@
+*{
+  box-sizing: border-box;
+}
+
+.container{
+  background-color: mistyrose;
+  width: 80%;
+  margin: 0 auto;
+}
+
+main{
+  display: inline-block;
+  background-color: lightgreen;
+  width: 60%;
+  vertical-align: top;
+}
+
+aside{
+  display: inline-block;
+  background-color: plum;
+  width: 39%;
+  vertical-align: top;
+}
+
+article {
+  margin-bottom: 40px;
+}
+
+article: last-child{
+  margin-bottom: 0;
+}
+
+article > footer{
+  border-top: 1px dotted black;
+  border-bottom: 1px solid black;
+}
+
+article img {
+  width: 100%;
+}
+
+aside img{
+  width: 100%;
+}

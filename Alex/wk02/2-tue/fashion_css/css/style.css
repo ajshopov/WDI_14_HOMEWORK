@@ -1,0 +1,109 @@
+*{
+  box-sizing: border-box;
+}
+
+.container, header, nav{
+  width: 80%;
+  margin: 0 auto;
+}
+
+article .paragraph::first-letter{
+  float: left;
+  font-size: 60px;
+  color: lightgrey;
+  padding-right: 6px;
+}
+
+main{
+  display: inline-block;
+  width: 66%;
+}
+
+aside{
+  display: inline-block;
+  width: 33%;
+  vertical-align: top;
+  color: grey;
+  padding: 10px;
+}
+
+nav ul{
+  margin: 0 auto;
+  padding: 0px;
+}
+
+img{
+  width: 100%;
+}
+
+section {
+  border-bottom: 1px solid grey;
+  padding: 20px 0;
+}
+
+h1, h2{
+  font-family: helvetica;
+}
+
+nav{
+  padding-bottom: 20px;
+}
+
+h1{
+  color: red;
+  display: inline; 
+  padding-right: 10px;
+}
+
+header h2{
+  color: grey;
+  display: inline-block;
+}
+
+aside li{
+  color: red;
+}
+
+footer ul{
+  padding: 0;
+}
+
+footer li{
+    border-right: 1px solid grey;
+    padding: 0 3px 0 0;
+}
+
+footer li:nth-last-child(1){
+  border-right: none;
+}
+
+nav li {
+  display: inline-block;
+  background-color: black;
+  text-align: center;
+  font-family: helvetica;
+  color: lightgrey;
+  padding: 15px 10px;
+  width: 16%;
+  vertical-align: middle;
+}
+
+
+article{
+  border-bottom: 1px solid grey;
+  padding-bottom: 10px;
+}
+
+article h2:first-child{
+  color: lightgrey;
+}
+
+footer li{
+  display: inline;
+  color:red;
+}
+
+.pushright{
+  color: red;
+  text-align: right;
+}
