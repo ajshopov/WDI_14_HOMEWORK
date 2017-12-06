@@ -27,11 +27,6 @@ aside{
   padding: 10px;
 }
 
-nav ul{
-  margin: 0 auto;
-  padding: 0px;
-}
-
 img{
   width: 100%;
 }
@@ -75,6 +70,11 @@ footer li{
 
 footer li:nth-last-child(1){
   border-right: none;
+}
+
+nav ul{
+  margin: 0 auto;
+  padding: 0px;
 }
 
 nav li {

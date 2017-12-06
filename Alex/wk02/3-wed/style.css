@@ -1,0 +1,87 @@
+body{
+  text-transform: uppercase;
+}
+
+.logo{
+  width: 150px;
+  height: 50px;
+  display: inline;
+  border: 2px black solid;
+  background-color: red;
+  margin: 2%;
+}
+
+.filler{
+    width: 150px;
+  height: 50px;
+  display: inline;
+}
+
+.title{
+  display: inline;
+    margin: 2%;
+}
+
+.box1{
+  width: 25%;
+  height: 25%;
+  border: 1px solid black;
+  display: inline-block; 
+  background-color: orange;
+  margin: 50px;
+}
+
+.box2{
+  width: 25%;
+  height: 25%;
+  border: 1px solid black;
+  display: inline-block;
+  background-color: yellow;
+  margin: 50px;
+}
+
+.account{
+
+  text-align: center;
+}
+
+.amount{
+  background-color: aqua;
+  border: 1px black solid;
+  margin: 0 auto;
+  width: 80%;
+  text-align: left;
+  padding-left: 2px;
+}
+
+.buttons{
+  margin: 10px 5px;
+  display: inline;
+  display: flex;
+  justify-content: space-around;
+}
+
+header{
+/*  border: 1px solid black;*/
+  text-align: center;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+main{
+/*  border: 1px solid orange;*/
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  padding: 10% 0px;
+}
+
+a{
+  font-size: 12px;
+  display: inline;
+  background-color: grey;
+  padding: 1px;
+  color: black;
+  text-decoration: none;
+}
