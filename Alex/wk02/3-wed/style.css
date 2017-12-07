@@ -27,7 +27,7 @@ body{
   height: 25%;
   border: 1px solid black;
   display: inline-block; 
-  background-color: orange;
+  background-color: grey;
   margin: 50px;
 }
 
@@ -36,8 +36,12 @@ body{
   height: 25%;
   border: 1px solid black;
   display: inline-block;
-  background-color: yellow;
+  background-color: grey;
   margin: 50px;
+}
+
+h4{
+  display: inline;
 }
 
 .account{
@@ -84,4 +88,8 @@ a{
   padding: 1px;
   color: black;
   text-decoration: none;
+}
+
+.zero{
+  background-color: red;
 }
