@@ -12,6 +12,16 @@ var box1 = document.querySelector('.box1');
 var box2 = document.querySelector('.box2');
 
 
+
+function checkForZero(){
+    if(Number(balance1.textContent) === 0){
+        box1.classList.add('zero');
+    }
+    if(Number(balance2.textContent) === 0){
+        box2.classList.add('zero');
+    }
+}
+
 function depSaving(){
   var total = Number(balance1.textContent) + Number(input1.value);
   balance1.textContent = total;
@@ -27,27 +37,38 @@ function depChecking(){
 function withSaving(){
   var total = Number(balance1.textContent) - Number(input1.value);
   if(total < 0){
-    return;
+    var totalDollars = Number(balance1.textContent) + Number(balance2.textContent);
+      if(Number(input1.value) <= totalDollars){
+        totalDollars = totalDollars - Number(input1.value);
+        balance1.textContent = 0;
+        balance2.textContent = totalDollars;
+      } 
   } else if (total === 0) {
     balance1.textContent = total;
-    box1.classList.add('zero');
   } else {
     balance1.textContent = total;
   }
+  checkForZero();
 }
 
 function withChecking(){
   var total = Number(balance2.textContent) - Number(input2.value);
   if(total < 0){
-    return;
+    var totalDollars = Number(balance1.textContent) + Number(balance2.textContent);
+      if(Number(input2.value) <= totalDollars){
+        totalDollars = totalDollars - Number(input2.value);
+        balance2.textContent = 0;
+        balance1.textContent = totalDollars;
+      } 
   } else if (total === 0){
     balance2.textContent = total;
-    box2.classList.add('zero');
   } else {
     balance2.textContent = total;
   }
+    checkForZero();
 }
 
+checkForZero();
 
 deposit1.addEventListener('click', depSaving);
 deposit2.addEventListener('click', depChecking);
