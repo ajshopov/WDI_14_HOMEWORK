@@ -23,8 +23,8 @@ body{
 }
 
 .box1{
-  width: 25%;
-  height: 25%;
+  width: 250px;
+  height: 220px;
   border: 1px solid black;
   display: inline-block; 
   background-color: grey;
@@ -32,16 +32,21 @@ body{
 }
 
 .box2{
-  width: 25%;
-  height: 25%;
+  width: 250px;
+  height: 220px;
   border: 1px solid black;
   display: inline-block;
   background-color: grey;
   margin: 50px;
 }
 
+span{
+  font-size: 22px;
+}
+
 h4{
   display: inline;
+  font-size: 22px;
 }
 
 .account{
@@ -52,7 +57,7 @@ h4{
 .amount{
   background-color: aqua;
   border: 1px black solid;
-  margin: 0 auto;
+  margin: 20px auto;
   width: 80%;
   text-align: left;
   padding-left: 2px;
