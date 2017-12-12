@@ -27,8 +27,6 @@ var line1 = alamein.slice(0);
     line1 = sandringham.slice(0);
   }
 
-//console.log('beginning: ' + beg + ' trainline ' + line1);
-
 //find destination line
 var end = alamein.indexOf(dest);
 var line2 = alamein.slice(0);
@@ -40,13 +38,13 @@ var line2 = alamein.slice(0);
     end = sandringham.indexOf(dest);
     line2 = sandringham.slice(0);
   }
-//console.log('ending: ' + end + ' trainline ' + line2);
 
 var checker1 = line1.join();
 var checker2 = line2.join();
 
 console.log(checker1);
 console.log(checker2);
+
 //check that lines are the same, if not, change var transfer to Richmond
 if(checker1 == checker2){
     
