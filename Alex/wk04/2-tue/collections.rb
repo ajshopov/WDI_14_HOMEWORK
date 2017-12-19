@@ -72,8 +72,8 @@ puts ninja_turtle
 # Remove the radical key-value pair from ninja_turtle.
 
 puts '2c'
-ninja_turtle.delete(':radical')
-puts ninja_turtle #review
+ninja_turtle.delete(:radical)
+puts ninja_turtle 
 
 # Add a key pizza_toppings to ninja_turtle. Set it to an array of strings (e.g., ["cheese", "pepperoni", "peppers"]).
 
@@ -83,14 +83,25 @@ puts ninja_turtle
 
 # Access the first element of pizza_toppings.
 
-# # Your answer here
+puts '2e'
+puts ninja_turtle[:pizza_toppings][0]
+
 # Produce an array containing all of ninja_turtle's keys using a method. The Ruby documentation might help.
 
-# # Your answer here
+arrayKeys = ninja_turtle.keys
+puts '2f'
+puts arrayKeys
+
 # Bonus
 # Print out each key-value pair in the following format - "KEY's is equal to VALUE" -- using a method. The Ruby documentation might help.
 
-# Your answer here
+puts '2g'
+
+ninja_turtle.each do |key, array|
+  puts "#{key} is equal to #{array}"
+  
+end
+
 
 binding.pry
 
