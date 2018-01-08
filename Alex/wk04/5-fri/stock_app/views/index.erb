@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stock App</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="stock-box">
+  <h2><%= @symbol %></h2> <p>(<%= @exchange %>)</p>
+  <h1>$<%= @price %></h1> 
+  <p>EPS: <%= @eps %><br>
+  <a href="<%= @url %>"><%= @url %></a>
+  </p> 
+    <a href="/about">About</a>
+  <p><%= @overview %></p>
+  </div>
+
+</body>
+</html>
