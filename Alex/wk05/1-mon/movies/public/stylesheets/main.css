@@ -1,0 +1,55 @@
+body{
+  background-image: url("https://static.pexels.com/photos/390089/film-movie-motion-picture-390089.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  text-align: center;
+  font-family: Verdana, sans-serif;
+  height: 100vh;
+}
+
+article{
+  width: 800px;
+  margin: auto;
+  padding: 10px;
+  border: solid black 3px;
+  background-color: rgba(255,255,255,0.5);
+}
+
+ul{
+  list-style: none;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+li{
+ 
+}
+
+.content{
+  width: 100%;
+  display: flex;
+}
+
+.details{
+  width: 90%;
+  border: solid black 1px;
+  padding: 10px 20px;
+  text-align: left;
+}
+
+img{
+  max-width: 320px;
+  max-height: 450px;
+  padding-right: 10px;
+}
+
+input{
+  width: 180px;
+  font-size: 20px;
+}
+
+button{
+  font-size: 20px;
+}
