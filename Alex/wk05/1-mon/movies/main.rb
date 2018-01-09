@@ -19,6 +19,10 @@ get '/results' do
     redirect to("/movie?title=#{@search_results[0]}")
   end
 
+  file = File.open('search_history.txt', 'a')
+  file.puts(params[:search])
+  file.close
+
   erb :search
 end
 
@@ -51,5 +55,9 @@ get '/movie' do
   erb :movie
 end
 
-
+get '/history' do
+  file = File.readlines('search_history.txt').uniq
+  @search_history_list = file
+  erb :history
+end
 
