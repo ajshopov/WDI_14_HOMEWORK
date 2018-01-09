@@ -1,0 +1,6 @@
+
+<ul>
+  <% @search_results.each do |result|%>
+    <li><a href="/movie?title=<%=result%>"><%= result %></a></li>
+  <% end %>
+</ul>

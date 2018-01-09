@@ -6,6 +6,22 @@ get '/' do
   erb :index
 end
 
+get '/results' do
+  search = params[:search]
+  result = HTTParty.get("http://omdbapi.com/?apikey=2f6435d9&s=#{search}")
+  
+  @search_results = []
+  result['Search'].each do |film|
+    @search_results.push(film['Title'])
+  end
+
+  if result['totalResults'] == "1"
+    redirect to("/movie?title=#{@search_results[0]}")
+  end
+
+  erb :search
+end
+
 get '/movie' do
   title = params[:title]
   result = HTTParty.get("http://omdbapi.com/?apikey=2f6435d9&t=#{title}")
@@ -14,15 +30,25 @@ get '/movie' do
   @runtime = result['Runtime']
   @rated = result['Rated']
   @language = result['Language']
-  @imdb = result['Ratings'][0]['Value']
-  @rottom = result['Ratings'][1]['Value']
+
+  if result['Ratings'][0] != nil
+    @imdb = result['Ratings'][0]['Value']
+  else
+    @imdb = '-'
+  end
+  
+  if result['Ratings'][1] != nil
+    @rottom = result['Ratings'][1]['Value']
+  else
+    @rottom = '-'
+  end
+
   @poster = result['Poster']
   @actors = result['Actors'].split(',')
   @director = result['Director']
   @plot = result['Plot']
   @production = result['Production']
   erb :movie
-    
 end
 
 
