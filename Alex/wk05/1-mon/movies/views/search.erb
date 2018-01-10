@@ -1,6 +1,8 @@
-
 <ul>
-  <% @search_results.each do |result|%>
-    <li><a href="/movie?title=<%=result%>"><%= result %></a></li>
-  <% end %>
+<% @results_array.each do |result|%>
+  <li>
+    <img src="<%= result['Poster']%>" alt="">
+    <a href="/movie?title=<%=result['Title']%>"><%= result['Title'] %></a>
+  </li>
+<% end %>
 </ul>

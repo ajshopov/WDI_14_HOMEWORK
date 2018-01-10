@@ -67,3 +67,7 @@ h1{
 #history{
   margin-top: 10px;
 }
+
+li > img {
+  width: 30px;
+}
