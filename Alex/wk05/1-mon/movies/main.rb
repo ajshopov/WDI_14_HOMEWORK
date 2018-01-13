@@ -44,9 +44,17 @@ get '/movie' do
   #return sql data
     @name = lookup_data[:name]
     @year = lookup_data[:year]
-    @rated = lookup_data[:rated]
     @runtime = lookup_data[:runtime]
+    @rated = lookup_data[:rated]
+    @language = lookup_data[:language]
     @poster = lookup_data[:poster]
+    @imdb = lookup_data[:imdb]
+    @rottom = lookup_data[:rottom]
+    @actors = lookup_data[:actors]
+    @director = lookup_data[:director]
+    @plot = lookup_data[:plot]
+    @production = lookup_data[:production]
+
   else
   #else httparty
     result = HTTParty.get("http://omdbapi.com/?apikey=2f6435d9&t=#{title}")
@@ -55,34 +63,28 @@ get '/movie' do
     @rated = result['Rated']
     @runtime = result['Runtime']
     @poster = result['Poster']
+    @language = result['Language']
+    if result['Ratings'][0] != nil
+      @imdb = result['Ratings'][0]['Value']
+    else
+      @imdb = '-'
+    end
+    
+    if result['Ratings'][1] != nil
+      @rottom = result['Ratings'][1]['Value']
+    else
+      @rottom = '-'
+    end
+
+    @actors = result['Actors'].split(',')
+    @director = result['Director']
+    @plot = result['Plot']
+    @production = result['Production']
+
   # save to db
-  # binding.pry
-  
-    movie = Movie.create(name: @name, year: @year, rated: @rated, runtime: @runtime, poster: @poster)
+    movie = Movie.create(name: @name, year: @year, rated: @rated, runtime: @runtime, poster: @poster, language: @language, imdb: @imdb, rottom: @rottom, actors: @actors, director: @director, plot: @plot, production: @production)
   end
 
-
-
-
-
-  # @language = result['Language']
-
-  # if result['Ratings'][0] != nil
-  #   @imdb = result['Ratings'][0]['Value']
-  # else
-  #   @imdb = '-'
-  # end
-  
-  # if result['Ratings'][1] != nil
-  #   @rottom = result['Ratings'][1]['Value']
-  # else
-  #   @rottom = '-'
-  # end
-
-  # @actors = result['Actors'].split(',')
-  # @director = result['Director']
-  # @plot = result['Plot']
-  # @production = result['Production']
   erb :movie
 end
 
