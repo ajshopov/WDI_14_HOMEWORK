@@ -7,12 +7,7 @@
   <img src="<%= @poster %>" alt="poster">
   <div class="details">
   <p>IMDb score: <%= @imdb %> ||  Rotten &#x1F345: <%= @rottom %></p>
-  <p>Cast:
-    <ul>
-    <% @actors.each do |star|%>
-      <li><%= star %></li>
-    <% end %>
-  </ul> </p>
+  <p>Cast:<%= @actors %></p>
   <p>Director: <%= @director %></p>
   <p>Plot: <%= @plot %></p>
   <p>Production: <%= @production %></p>

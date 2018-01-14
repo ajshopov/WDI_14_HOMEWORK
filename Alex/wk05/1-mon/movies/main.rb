@@ -76,7 +76,7 @@ get '/movie' do
       @rottom = '-'
     end
 
-    @actors = result['Actors'].split(',')
+    @actors = result['Actors']
     @director = result['Director']
     @plot = result['Plot']
     @production = result['Production']
