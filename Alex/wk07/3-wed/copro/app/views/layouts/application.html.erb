@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Copro</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <% if logged_in? %>
+      <!-- log out button -->
+      <form action="/session" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <button>logout</button>
+      </form>
+          
+      <h2>Logged in as: <%= current_user.email %></h2>
+    <% end %>
+    
+    <p>
+      <a href="/">HOME</a>
+      <% if !logged_in? %>
+        <a href="/login">LOGIN</a>
+      <% end %>
+    </p>
+
+    <%= yield %>
+  </body>
+</html>

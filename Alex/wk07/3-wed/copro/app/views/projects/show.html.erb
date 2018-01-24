@@ -1,0 +1,15 @@
+<img src="<%= @project.preview %>" alt="">
+<h3>Comments:</h3>
+  <ul>
+  <% @comments.each do |comment| %>
+    <li><%= comment.description %></li>
+  <% end %>
+  </ul>
+
+<form action="/comments" method="post" enctype="multipart/form-data">
+
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input name="description" type="text">
+  <input type="hidden" name="project_id" value="<%= @project.id %>">
+  <button>add comment</button>
+</form>
