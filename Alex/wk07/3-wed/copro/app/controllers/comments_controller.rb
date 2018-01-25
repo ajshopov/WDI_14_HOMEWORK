@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
     c1.description = params[:description]
     c1.save
     redirect_to "/projects/#{params[:project_id]}"
+    
   end
 
 end

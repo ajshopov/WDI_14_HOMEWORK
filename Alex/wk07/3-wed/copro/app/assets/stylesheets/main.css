@@ -7,19 +7,40 @@ label, input {
   flex-wrap: wrap;
 }
 
+.wrapper {
+  width: 550px;
+  position: relative;
+}
+
+.wrapper span {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 4em;
+}
+
 .project {
   width: 50%;
 /*  float: left;*/
+  background-color: #C5EEFF;
+}
+
+.project h2 {
+  display: none;
 }
 
 .project img {
   display: block; /*small space under image*/
 }
 
-@media (min-width: 600px) {
+@media (min-width: 650px) {
   .project {
     width: 33.3333%;
   }
+  .project h2 {
+    display: block;
+  }
+}
 
 @media (min-width: 1000px) {
   .project {

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :likes
   resources :comments
   get '/', to: 'pages#home'
   get '/login', to: 'session#new'
