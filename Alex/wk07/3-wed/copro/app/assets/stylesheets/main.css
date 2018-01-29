@@ -7,6 +7,14 @@ label, input {
   flex-wrap: wrap;
 }
 
+.project {
+  transition: .3s;
+}
+
+.project:hover {
+  transform: translateY(0.3em);
+}
+
 .wrapper {
   width: 550px;
   position: relative;
@@ -17,6 +25,13 @@ label, input {
   right: 10px;
   top: 10px;
   font-size: 4em;
+  color: black;
+}
+
+.wrapper span:hover {
+  color: yellow;
+  cursor: pointer;
+  transition: .5s;
 }
 
 .project {

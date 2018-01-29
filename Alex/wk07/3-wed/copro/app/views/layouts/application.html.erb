@@ -9,23 +9,25 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <!-- log out button -->
-      <form action="/session" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <button>logout</button>
-      </form>
-          
-      <h2>Logged in as: <%= current_user.email %></h2>
-    <% end %>
-    
-    <p>
-      <a href="/">HOME</a>
-      <% if !logged_in? %>
-        <a href="/login">LOGIN</a>
+    <div class="main-page">
+      <% if logged_in? %>
+        <!-- log out button -->
+        <form action="/session" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <button>logout</button>
+        </form>
+            
+        <h2>Logged in as: <%= current_user.email %></h2>
       <% end %>
-    </p>
+      
+      <p>
+        <a href="/">HOME</a>
+        <% if !logged_in? %>
+          <a href="/login">LOGIN</a>
+        <% end %>
+      </p>
+    </div>
 
     <%= yield %>
   </body>

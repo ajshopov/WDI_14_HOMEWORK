@@ -1,49 +1,63 @@
 <h2><%= @project.title %></h2>
 <p>submitted by: <%= @user.email %></p>
 
-<div class="wrapper">
-  <img src="<%= @project.preview %>" alt="">
-  <span style="font-family:Wingdings">&#171;</span>
-</div>
+<div class="show-page">
+  
 
-<%= @project.likes.count %>
-<form action="/likes" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="project_id" value="<%= @project.id %>">
-  <button>like</button>
-</form>
+  <div class="wrapper">
+    <img src="<%= @project.preview %>" alt="">
+    
+    <form name="myform" action="/likes" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="hidden" name="project_id" value="<%= @project.id %>">
+      <span onclick="myform.submit()" style="font-family:Wingdings">&#171;</span>
+    </form>
 
+  </div>
 
-<h3>Comments:</h3>
-  <ul>
-  <% @comments.each do |comment| %>
-    <li><%= comment.description %></li>
-  <% end %>
-  </ul>
+  <span class="like-count"><%= @project.likes.count %></span>
+  
 
-<% if logged_in? %>
-  <form action="/comments" method="post" enctype="multipart/form-data">
-
+<!-- <form action="/likes" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
-    <!-- <input name="description" type="text"> -->
-    <textarea name="description" cols="30" rows="10" placeholder="Enter comment..."></textarea>
-
     <input type="hidden" name="project_id" value="<%= @project.id %>">
-    <button>add comment</button>
-  </form>
-<% else %>
-  <a href="/login">Login here to comment</a>
-<% end %>
+    <button>like</button>
+  </form> -->
+
+
+  <h3>Comments:</h3>
+    <ul>
+    <% @comments.each do |comment| %>
+      <li><%= comment.description %></li>
+    <% end %>
+    </ul>
+
+  <% if logged_in? %>
+    <form action="/comments" method="post" enctype="multipart/form-data">
+
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+      <!-- <input name="description" type="text"> -->
+      <textarea name="description" cols="30" rows="10" placeholder="Enter comment..."></textarea>
+
+      <input type="hidden" name="project_id" value="<%= @project.id %>">
+      <button>add comment</button>
+    </form>
+  <% else %>
+    <a href="/login">Login here to comment</a>
+  <% end %>
+
+</div>
 
 <script>
   var star = document.querySelector('.wrapper span');
   
-  function likeProject(){
+  star.addEventListener('click', function likeProject(event){
+    var count = event.target.closest('.show-page').querySelector('.like-count');
     console.log('liked');
-  }
-  
-  star.addEventListener('click', likeProject);
+    count.textContent = parseInt(count.textContent) + 1;
+  });
+
 </script>
 
 
