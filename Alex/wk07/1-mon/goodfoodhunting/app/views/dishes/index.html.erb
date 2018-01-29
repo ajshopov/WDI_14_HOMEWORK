@@ -1,0 +1,6 @@
+<h2>all dishes</h2>
+
+<% @dishes.each do |item| %>
+  <p><%= item.name %></p>
+  <img src="<%= item.image_url %>" alt="">
+<% end %>

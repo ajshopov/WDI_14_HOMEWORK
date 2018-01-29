@@ -1,0 +1,21 @@
+<h2>show</h2>
+
+<%= @dish.name %>
+<img src="<%= @dish.image_url %>" alt="">
+
+<form action="/dishes/<%= @dish.id %>" method="post">
+  <input type="hidden" value="delete" name="_method">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <button>delete</button>
+</form>
+
+<h3>edit</h3>
+
+<!-- <form action="/dishes/<%= #@dish.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <label for="">name</label>
+  <input name="name" type="text" value="<%= #@dish.name %>">
+  <label for="">image</label>
+  <input name="image_url" type="text" value="<%= #@dish.image_url %>">
+  <button>update</button>
+</form> -->
