@@ -35,4 +35,12 @@ class DishesController < ApplicationController
       render :show
     end
   end
+
+  def update
+    @dish = Dish.find(params[:id])
+    @dish.name = params[:name]
+    @dish.image_url = params[:image_url]
+    @dish.save
+    redirect_to "/dishes/#{params[:id]}"
+  end
 end

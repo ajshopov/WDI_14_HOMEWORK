@@ -1,6 +1,6 @@
 <h2>all dishes</h2>
 
 <% @dishes.each do |item| %>
-  <p><%= item.name %></p>
+  <p><a href="/dishes/<%= item.id %>"><%= item.name %></a></p>
   <img src="<%= item.image_url %>" alt="">
 <% end %>

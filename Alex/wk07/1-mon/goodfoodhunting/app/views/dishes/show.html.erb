@@ -11,11 +11,12 @@
 
 <h3>edit</h3>
 
-<!-- <form action="/dishes/<%= #@dish.id %>" method="post">
+<form action="/dishes/<%= @dish.id %>" method="post">
   <input type="hidden" name="_method" value="put">
   <label for="">name</label>
-  <input name="name" type="text" value="<%= #@dish.name %>">
+  <input name="name" type="text" value="<%= @dish.name %>">
   <label for="">image</label>
-  <input name="image_url" type="text" value="<%= #@dish.image_url %>">
+  <input name="image_url" type="text" value="<%= @dish.image_url %>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <button>update</button>
-</form> -->
+</form>
