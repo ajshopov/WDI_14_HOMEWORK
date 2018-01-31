@@ -1,0 +1,43 @@
+h1{
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.movie-card {
+  background-color: #E9F4FF;
+  width: 30%;
+  margin: 1%;
+  border-radius: 0.2em;
+  transition: .3s;
+}
+
+.movie-card:hover {
+  transform: translateY(0.3em);
+}
+
+.container {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+input {
+  width: 400px;
+  height: 40px;
+  border: 2px solid black;
+  font-size: 1.5em;
+  vertical-align: middle;
+}
+
+button {
+  height: 40px;
+}
+
+.imdb-style{
+  width: 800px;
+  margin: 0 auto;
+}
+
+.search-bar {
+  margin: 10px;
+  text-align: center;
+}
