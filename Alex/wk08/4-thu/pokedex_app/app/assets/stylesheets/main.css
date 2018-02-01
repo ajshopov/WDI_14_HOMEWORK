@@ -1,0 +1,53 @@
+body {
+  margin: 0 auto;
+  font-family: 'pokefont';
+}
+
+h1 {
+  font-size: 30px;
+}
+
+.pokemon {
+  border: 1px solid black;
+  flex-wrap: wrap;
+  width: 350px;
+  height: 420px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: .3s;
+}
+
+.pokemon:after{
+  content: "";
+  background: url('https://t1.rbxcdn.com/822be1519b67a0f657dbfeae47eba30b');
+  background-position: center;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  position: absolute;
+}
+
+.pokemon:hover {
+  transform: translateY(0.3em);
+}
+
+.pokemon h2 {
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.pokedex {
+  display: flex;
+  width: 700px;
+}
+
+.new-poke-form{
+  margin: 15px auto;
+  text-align: center;
+}

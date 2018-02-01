@@ -1,0 +1,13 @@
+<%= @pokemon.species %>
+<%= @pokemon.nickname %>
+<%= @pokemon.level %>
+
+<p>release to wild?</p>
+<form action="/pokemons/<%= @pokemon.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="delete">
+  <button>yes</button>
+</form>
+
+
+<p>NB: this will delete the pokemon from your pokedex permanently</p>

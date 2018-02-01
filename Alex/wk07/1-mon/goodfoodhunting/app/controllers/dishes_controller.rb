@@ -1,7 +1,11 @@
 class DishesController < ApplicationController
 
   def new
-    
+  end
+
+  def api_index
+    @dishes = Dish.all
+    render json: @dishes
   end
   
   def create
@@ -21,6 +25,7 @@ class DishesController < ApplicationController
 
   def show
     @dish = Dish.find(params[:id])
+
   end
 
   def edit

@@ -20,3 +20,14 @@
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <button>update</button>
 </form>
+
+
+<form action="/comments" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <textarea name="content" cols="30" rows="10" placeholder="Enter comment..."></textarea>
+
+  <input type="hidden" name="dish_id" value="<%= @dish.id %>">
+  <button>add comment</button>
+</form>
+
