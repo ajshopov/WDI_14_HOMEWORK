@@ -1,6 +1,9 @@
-<%= @pokemon.species %>
-<%= @pokemon.nickname %>
-<%= @pokemon.level %>
+
+<div class="pokemon">
+  <h1 class="species"><%= @pokemon.species %></h1>
+  <h1><%= @pokemon.nickname %></h1>
+  <h1>Lvl <%= @pokemon.level %></h1>
+</div>
 
 <p>release to wild?</p>
 <form action="/pokemons/<%= @pokemon.id %>" method="post">
@@ -11,3 +14,33 @@
 
 
 <p>NB: this will delete the pokemon from your pokedex permanently</p>
+
+
+
+<div class="container">
+  
+</div>
+
+<script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous">  
+</script>
+
+<script>
+  // var pokeRuby = JSON.parse(<%= @pokemon.species.to_json %>)
+
+  var pokeName = $('.species').text().toLowerCase();
+
+    var options = {
+      url: 'https://pokeapi.co/api/v2/pokemon/' + pokeName +'/',
+      method: 'get'
+    };
+
+    $.ajax(options).done(function(response){
+      // console.log(response.sprites.front_default);
+      var pokeImage = response.sprites.front_default;
+      var newPoster = $('<img>').attr('src', pokeImage);
+      $('.container').append(newPoster);
+    });
+</script>

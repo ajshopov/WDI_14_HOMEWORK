@@ -12,3 +12,39 @@
     <button>add</button>
   </form>
 </div>
+
+<div class="container">
+  
+</div>
+
+<script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous">  
+</script>
+
+<script>
+
+  var count = 1;
+
+  while(count < 11){
+    
+
+    var options = {
+      url: 'https://pokeapi.co/api/v2/pokemon/' + count +'/',
+      method: 'get'
+    };
+
+    $.ajax(options).done(function(response){
+      // console.log(response.sprites.front_default);
+      var pokeImage = response.sprites.front_default;
+      var newPoster = $('<img>').attr('src', pokeImage);
+      $('.container').append(newPoster);
+    });
+    count++;
+  }
+</script>
+
+
+
+

@@ -1,10 +1,33 @@
+@font-face{
+  font-family: pokemon;
+  src: url('fonts/PokemonSolid.ttf');
+}
+
 body {
   margin: 0 auto;
-  font-family: 'pokefont';
+  background-color: mistyrose;
+}
+
+nav {
+  background-color: #3c5aa6;
+  color: #ffcb05;
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 40px;
+  font-family: pokemon;
+ -webkit-text-stroke-width: 1px;
+ -webkit-text-stroke-color: white;
+}
+
+.container{
+  height: 300px;
+  width: 300px;
+}
+
+.container img {
+  height: 100%;
+  width: 100%;
 }
 
 .pokemon {
@@ -35,6 +58,7 @@ h1 {
 
 .pokemon:hover {
   transform: translateY(0.3em);
+  border: 2px solid red;
 }
 
 .pokemon h2 {
