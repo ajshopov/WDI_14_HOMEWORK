@@ -2,10 +2,15 @@ require 'pry'
 
 class Queens
   def initialize(positions = nil)
-      @positions = positions
+    @positions = positions
+    if !@positions.nil?
+      if @positions[:white] == @positions[:black]
+        raise(ArgumentError)
+      end
+    end
   end 
 
-  board = []
+  
 
   def white
     if !@positions.nil?
@@ -16,6 +21,7 @@ class Queens
   end 
 
   def black
+
     if !@positions.nil?
       @positions[:black]
     else
@@ -27,8 +33,28 @@ class Queens
   end
 
   def to_s
+    board = ""
+    i = 1
+    while i<128
+      # odd add zero
+      if i.odd?
+        board << '0'
+      elsif i % 16 == 0
+        board << "\n"
+      else
+        board << ' '
+      end
+      # even add space
+
+
+
+      i += 1
+    end
+    return board
   end
+
 
 end
 
-# binding.pry
+binding.pry
+puts 'end'
