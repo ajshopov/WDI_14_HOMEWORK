@@ -148,7 +148,29 @@ function bouncerChat(age, hasId){
   }
 }
 
+var output = [];
+for (var i = 1; i <= 100; i++) {
+  if (i % 3 == 0 && i % 5 == 0) {
+    output.push('fizzbuzz')
+  } else if (i % 5 == 0){
+    output.push('Buzz')
+  } else if (i % 3 == 0){
+    output.push('Fizz')
+  } else {
+    output.push(i)
+  }
+}
+console.log(output.join(', '));
 
 
-
-
+function fizzBuzz(num){
+  if (num % 3 == 0 && num % 5 == 0) {
+    console.log('fizzbuzz')
+  } else if (num % 5 == 0){
+    console.log('Buzz')
+  } else if (num % 3 == 0){
+    console.log('Fizz')
+  } else {
+    console.log(num)
+  }
+}
