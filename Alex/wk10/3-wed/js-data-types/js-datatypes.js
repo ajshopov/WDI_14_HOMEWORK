@@ -98,3 +98,57 @@ bands[1][3] = "Ringo"
 
 // [["Mick", "Keith", "Ronnie", "Charlie"],["Paul", "John", "George", "Ringo"]]
 
+
+
+// a | b | a AND b
+// true  true   true
+// true  false  false
+// false true   false
+// false false  false
+
+// a | b | a OR b
+// true  true  true
+// true  false true
+// false true  true
+// false false false
+
+// a | b | a != b
+// 3 3  false
+// 1 5  true
+// 2 "2"  false
+
+// a | b |    !a && (a || b)
+// true  true  -- false && (true || true) -- false && true => false
+// true  false -- false && (true || false) -- false && true => false
+// false true --  true && (false || true) -- true && true => true
+// false false -- true && (false || false) -- true && false => false
+
+
+// Conditionals
+// You're a bouncer at a bar. Given an age variable, create a conditional that satisfies the following requirements...
+
+// If a patron is older than 21, print out "Come on in!".
+// If a patron is between 18 and 21, print out "Come on in (but no drinking)!".
+// If a patron is younger than 18, print out "You're too young to be in here!".
+// If a patron is older than 75, print out "Are you sure you want to be here?".
+
+function bouncerChat(age, hasId){
+  if (hasId) {
+    if (age < 18) {
+      return "You're too young to be in here!";
+    } else if (age >= 18 && age <= 21){
+      return "Come on in (but no drinking)!";
+    } else if (age >= 75){
+      return "Are you sure you want to be here?"
+    } else {
+      return "Come on in!"
+    }
+  } else {
+    return "No ID, no entry."
+  }
+}
+
+
+
+
+
