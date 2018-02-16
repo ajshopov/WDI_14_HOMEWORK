@@ -1,5 +1,5 @@
 var city = process.argv[2];
-var apiReq = 'http://api.openweathermap.org/data/2.5/weather?APPID=eee4ab46079f53fc91cefe256c1e0e05&q=' + city;
+var apiReq = 'http://api.openweathermap.org/data/2.5/weather?APPID=' + process.env.weather_api + '&q=' + city;
 
 var request = require('request');
 request(apiReq, function (error, response, body) {
