@@ -26,10 +26,10 @@ app.get('/', function(req, res){
   });
 });
 
-app.get('/*/', function(req, res){
+app.get('/:name', function(req, res){
   var randomComp = _.sample(compliments)
   var randomCol = _.sample(colors)
-  var person = req.path.slice(1);
+  var person = req.params.name;
   res.render('name', {
     person: person,
     randomComp: randomComp,
