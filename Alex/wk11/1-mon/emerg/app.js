@@ -15,10 +15,11 @@ var compliments = [
   "The Force is strong with you"
 ]
 var colors = ["#FFBF00", "#0080FF","#01DF3A","#FF0080"]
-var randomComp = _.sample(compliments)
-var randomCol = _.sample(colors)
+
 
 app.get('/', function(req, res){
+  var randomComp = _.sample(compliments)
+  var randomCol = _.sample(colors)
   res.render('home', {
     randomComp: randomComp,
     randomCol: randomCol
@@ -26,6 +27,8 @@ app.get('/', function(req, res){
 });
 
 app.get('/*/', function(req, res){
+  var randomComp = _.sample(compliments)
+  var randomCol = _.sample(colors)
   var person = req.path.slice(1);
   res.render('name', {
     person: person,
