@@ -1,4 +1,5 @@
-export default function getStrenght(password) {
+// export default 
+function getStrenght(password) {
   var count = 0
 
   if (password.match(/[A-Z]/)){
@@ -19,3 +20,5 @@ export default function getStrenght(password) {
   var feedback = ['enter_pw','weak', 'better', 'even_better', 'more_better', 'best']
   return feedback[count];
 }
+
+module.exports = getStrenght
